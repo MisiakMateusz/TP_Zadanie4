@@ -16,9 +16,11 @@ namespace Zadanie_4.ViewModel
     class MainViewModel : BindableBase
     {
         private ObservableCollection<Department> departament;
+        
         private Department obecnyDepartament;
         private Data dataLayer;
 
+        
 
 
         private short newDepartamentID;
@@ -89,21 +91,24 @@ namespace Zadanie_4.ViewModel
         }
 
 
+
+
         /// <summary>
         /// Ustawianie oraz zwracanie wartości Data
         /// </summary>
         public Data Data
         {
+            
             get => dataLayer;
             set
             {
                 dataLayer = value;
-                departament = new ObservableCollection<Department>(value.Departament);
-               
-
+                Departament = new ObservableCollection<Department>(value.Departament);
+              
             }
         }
 
+        
         //Delegaty
         public DelegateCommand AddDepartament { get; private set; }
         public DelegateCommand GetAllDepartament { get; private set; }
@@ -114,6 +119,7 @@ namespace Zadanie_4.ViewModel
         /// </summary>
         public MainViewModel()
         {
+
             dataLayer = new Data();
             AddDepartament = new DelegateCommand(AddDepartaments);
             departament = new ObservableCollection<Department>();
@@ -141,10 +147,6 @@ namespace Zadanie_4.ViewModel
             }
             else MessageBox.Show("Podane dane nie mogą zostać przekazane do bazy danych", "Błąd");
         }
-
-      
-
-
 
 
     }

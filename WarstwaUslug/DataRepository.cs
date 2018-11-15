@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WarstwaUslug;
+using System.Collections.ObjectModel;
+
 
 
 namespace WarstwaUslug
@@ -44,7 +46,7 @@ namespace WarstwaUslug
         public static List<Department> GetAllDepartament()
         {
             List<Department> departaments = (from departament in dataContext.Department
-                                           select departament).ToList();
+                                             select departament).ToList();
 
             return departaments;
         }
