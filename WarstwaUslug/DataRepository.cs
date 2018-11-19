@@ -51,6 +51,28 @@ namespace WarstwaUslug
             return departaments;
         }
  
+        public static void DeleteDepartment(int id)
+        {
+            var deleteDepartemnt = (from department in dataContext.Department where department.DepartmentID == id
+                                    select department).First();
+
+
+
+            if (deleteDepartemnt != null)
+            {
+                dataContext.Department.DeleteOnSubmit(deleteDepartemnt);
+            }
+            try
+            {
+                dataContext.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+
+            }  
+        }
+
+      
 
 
     }

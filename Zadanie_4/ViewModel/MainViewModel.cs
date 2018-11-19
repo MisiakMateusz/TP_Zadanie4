@@ -112,6 +112,7 @@ namespace Zadanie_4.ViewModel
         //Delegaty
         public DelegateCommand AddDepartament { get; private set; }
         public DelegateCommand GetAllDepartament { get; private set; }
+        public DelegateCommand DeleteDepartment { get; private set; }
 
 
         /// <summary>
@@ -123,8 +124,15 @@ namespace Zadanie_4.ViewModel
             dataLayer = new Data();
             AddDepartament = new DelegateCommand(AddDepartaments);
             departament = new ObservableCollection<Department>();
+            DeleteDepartment = new DelegateCommand(DeleteDepartments);
             GetAllDepartament = new DelegateCommand(() => Data = new Data());
            
+        }
+
+        private void DeleteDepartments()
+        {
+            Task.Run(() => DataRepository.DeleteDepartment(obecnyDepartament.DepartmentID));
+            departament.Remove(obecnyDepartament);
         }
 
         /// <summary>
