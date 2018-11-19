@@ -15,6 +15,9 @@
     </Window.DataContext>
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="DepartmentTlo2.jpg"/>
+        </Grid.Background>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -22,15 +25,35 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Label Content="Podaj Departament ID: " HorizontalAlignment="Left" Margin="21,12,0,0" VerticalAlignment="Top"/>
-        <Label Content="Podaj nazwę: " HorizontalAlignment="Left" Margin="21,68,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.591,-0.692" Width="133"/>
-        <Label Content="Podaj nazwę grupy: " HorizontalAlignment="Left" Margin="21,129,0,0" VerticalAlignment="Top"/>
-        <Button Command="{Binding AddDepartament}" Content="Dodaj nowy dział" HorizontalAlignment="Left" Margin="21,331,0,0" VerticalAlignment="Top" Width="296" Height="78"/>
+        <Label Content="Podaj Departament ID: " HorizontalAlignment="Left" Margin="21,12,0,0" VerticalAlignment="Top" Foreground="#FFFBFAFA"/>
+        <Label Content="Podaj nazwę: " HorizontalAlignment="Left" Margin="21,68,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.591,-0.692" Width="133" Foreground="White"/>
+        <Label Content="Podaj nazwę grupy: " HorizontalAlignment="Left" Margin="21,129,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="White"/>
+        <Button Command="{Binding AddDepartament}" Content="Dodaj nowy dział" HorizontalAlignment="Left" Margin="21,331,0,0" VerticalAlignment="Top" Width="296" Height="78" FontSize="14" BorderBrush="{x:Null}" FontWeight="Bold">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FFACA4A4"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
         <TextBox HorizontalAlignment="Left" Height="25" Margin="21,43,0,0" TextWrapping="Wrap" Text="{Binding NewDepartamentID}" VerticalAlignment="Top" Width="296"/>
         <TextBox HorizontalAlignment="Left" Height="25" Margin="21,99,0,0" TextWrapping="Wrap" Text="{Binding NewName}" VerticalAlignment="Top" Width="296"/>
         <TextBox HorizontalAlignment="Left" Height="24" Margin="21,155,0,0" TextWrapping="Wrap" Text="{Binding NewGroupName}" VerticalAlignment="Top" Width="296"/>
 
-        <Button Command="{Binding GetAllDepartament}" Content="Pokaż wszystkie działy" Grid.Column="1" HorizontalAlignment="Left" Margin="10,331,0,0" VerticalAlignment="Top" Width="307" Height="78"/>
+        <Button Command="{Binding GetAllDepartament}" Content="Pokaż wszystkie działy" Grid.Column="1" HorizontalAlignment="Left" Margin="10,331,0,0" VerticalAlignment="Top" Width="307" Height="38" FontSize="14" FontWeight="Bold">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
         <ListBox ItemsSource="{Binding Departament}"
                  SelectedItem="{Binding ObecnyDepartament}" 
                  
@@ -44,7 +67,14 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Command="{Binding DeleteDepartment}" Content="Zaznacz i Usuń Department" Grid.Column="2" HorizontalAlignment="Left" Margin="10,331,0,0" VerticalAlignment="Top" Width="307" Height="78"/>
+        <Button Command="{Binding DeleteDepartment}" Content="Zaznacz i Usuń dział" Grid.Column="1" HorizontalAlignment="Left" Margin="10,373,0,0" VerticalAlignment="Top" Width="307" Height="38" FontSize="14" FontWeight="Bold">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="White"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

@@ -51,6 +51,10 @@ namespace WarstwaUslug
             return departaments;
         }
  
+        /// <summary>
+        /// Metoda Usuwa obiekt z bazy
+        /// </summary>
+        /// <param name="id"></param>
         public static void DeleteDepartment(int id)
         {
             var deleteDepartemnt = (from department in dataContext.Department where department.DepartmentID == id
@@ -71,9 +75,6 @@ namespace WarstwaUslug
 
             }  
         }
-
-      
-
 
     }
 }

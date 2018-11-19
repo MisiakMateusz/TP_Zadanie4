@@ -109,12 +109,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="View\DepartmentTlo.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WarstwaUslug\WarstwaUslug.csproj">
       <Project>{392b14c3-d83e-46fa-966c-1c54f3017a3a}</Project>
       <Name>WarstwaUslug</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\DepartmentTlo2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

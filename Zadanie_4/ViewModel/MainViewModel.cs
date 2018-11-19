@@ -20,9 +20,6 @@ namespace Zadanie_4.ViewModel
         private Department obecnyDepartament;
         private Data dataLayer;
 
-        
-
-
         private short newDepartamentID;
         /// <summary>
         /// Pobiera z pola tekstowego wartość DepartamentID
@@ -65,7 +62,6 @@ namespace Zadanie_4.ViewModel
             }
         }
 
-
         /// <summary>
         /// Właściwość zwraca kolekcje Departament lub ustawia
         /// </summary>
@@ -79,6 +75,9 @@ namespace Zadanie_4.ViewModel
             }
         }
 
+        /// <summary>
+        /// Metoda zwraca aktualnie używany obiekt
+        /// </summary>
         public Department ObecnyDepartament
         {
             get => obecnyDepartament;
@@ -89,9 +88,6 @@ namespace Zadanie_4.ViewModel
                               
             }
         }
-
-
-
 
         /// <summary>
         /// Ustawianie oraz zwracanie wartości Data
@@ -107,8 +103,7 @@ namespace Zadanie_4.ViewModel
               
             }
         }
-
-        
+     
         //Delegaty
         public DelegateCommand AddDepartament { get; private set; }
         public DelegateCommand GetAllDepartament { get; private set; }
@@ -129,6 +124,9 @@ namespace Zadanie_4.ViewModel
            
         }
 
+        /// <summary>
+        /// Metoda usuwa obiekt z listy oraz z bazy danych
+        /// </summary>
         private void DeleteDepartments()
         {
             Task.Run(() => DataRepository.DeleteDepartment(obecnyDepartament.DepartmentID));
